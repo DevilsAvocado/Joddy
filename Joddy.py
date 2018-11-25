@@ -50,6 +50,26 @@ async def on_message(message):
         msg = '{0.author.mention} has been assigned Berserker role'.format(message)
         await client.send_message(message.channel, msg)
 
+    if message.content.startswith('!heavygunner'):
+        role = get(message.server.roles, name='Heavy Gunner')
+        await client.add_roles(message.author, role)
+        await client.delete_message(message)
+        msg = '{0.author.mention} has been assigned Heavy Gunner role'.format(message)
+        await client.send_message(message.channel, msg)
+
+    if message.content.startswith('!knight'):
+        role = get(message.server.roles, name='Knight')
+        await client.add_roles(message.author, role)
+        await client.delete_message(message)
+        msg = '{0.author.mention} has been assigned Knight role'.format(message)
+        await client.send_message(message.channel, msg)
+
+    if message.content.startswith('!wizard'):
+        role = get(message.server.roles, name='Wizard')
+        await client.add_roles(message.author, role)
+        await client.delete_message(message)
+        msg = '{0.author.mention} has been assigned Wizard role'.format(message)
+        await client.send_message(message.channel, msg)
 
 
     if message.content.startswith("!unassign"):
